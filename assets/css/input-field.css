@@ -1,0 +1,66 @@
+.input-field {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  height: 55px; }
+
+.input-field > input[type="text"] {
+  background-color: transparent;
+  border-width: medium medium 1px;
+  border-style: none none solid;
+  border-color: -moz-use-text-color -moz-use-text-color #9E9E9E;
+  -moz-border-top-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  border-image: none;
+  border-radius: 0px;
+  outline: medium none;
+  width: 100%;
+  font-size: 16px;
+  margin: 5px 0px 20px;
+  box-shadow: none;
+  transition: all 0.3s ease 0s; }
+  .input-field > input[type="text"]:focus, .input-field > input[type="text"].notEmpty {
+    border-bottom: 1px solid #26A69A;
+    box-shadow: 0px 1px 0px 0px #26A69A; }
+  .input-field > input[type="text"].has-success, .input-field > input[type="text"][required]:valid {
+    border-bottom: 1px solid green;
+    box-shadow: 0px 1px 0px 0px green; }
+  .input-field > input[type="text"].has-error {
+    border-bottom: 1px solid red;
+    box-shadow: 0px 1px 0px 0px red; }
+
+.input-field > input[type="text"].isEmpty + label, .input-field > input[required]:invalid + label, .input-field > input[type="text"] + label {
+  transform: translateY(0%);
+  color: #9E9E9E;
+  position: absolute;
+  top: 0.8rem;
+  left: 0rem;
+  font-size: 16px;
+  cursor: text;
+  transition: all 0.3s ease-out 0s; }
+
+.input-field > input[type="text"]:focus + label, .input-field > input[type="text"].notEmpty + label, .input-field > input[type="text"].has-error + label, .input-field > input[type="text"].has-success + label, .input-field > input[required]:valid + label {
+  font-size: 14px;
+  transform: translateY(-140%); }
+
+.input-field > input[type="text"].has-success + label:after, .input-field > input[type="text"][required]:valid + label:after {
+  content: attr(data-success);
+  color: green;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  transition: all 0.2s ease-out 0s; }
+
+.input-field > input[type="text"].has-error + label:after, .input-field > input[type="text"][required]:invalid + label:after {
+  content: attr(data-error);
+  color: red;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  transition: all 0.2s ease-out 0s; }
+
+.input-field > input[type="text"]:focus + label {
+  color: #26A69A; }

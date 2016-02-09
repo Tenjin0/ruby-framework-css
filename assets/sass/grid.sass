@@ -1,0 +1,86 @@
+$breakpoint-xs: 480px !default
+$breakpoint-sm: 768px !default
+$breakpoint-md: 992px !default
+$breakpoint-lg: 1200px !default
+
+$grid-columns: 12
+$gutter-container : 20px
+$gutter: 15px
+$gutter-default: 15px
+// @import "variables"
+// @import "mixins"
+
+$breakpoint: (xs: $breakpoint-xs, sm: $breakpoint-sm, md: $breakpoint-md, lg: $breakpoint-lg)
+$screen-list: ".pad"
+
+@mixin content($i, $screen)
+    .col-#{$screen}-#{$i}
+        float: left
+        width: percentage(( $i / 12))
+    .col-offset-#{$screen}-#{$i}
+        margin-left : percentage(( $i / 12))
+
+@mixin make-grid-columns($i: 1, $list: $screen-list)
+    @for $i from 1 through $grid-columns
+        @each $property, $value in $breakpoint
+            $list: "#{$list}, .col-#{$property}-#{$i}"
+    #{$list}
+        position: relative
+        min-height: 1px
+        padding-left:  $gutter
+        padding-right: $gutter
+
+
+@mixin border-box
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+*,
+*:after,
+*:before
+    margin: 0
+    padding: 0
+    @include border-box
+
+%clearfix
+    *zoom: 1
+    &:before,
+    &:after
+        content: " "
+        display: table
+    &:after
+        clear: both
+
+@mixin container($gutter: $gutter-default)
+    margin-right: auto
+    margin-left: auto
+    padding-left:  $gutter
+    padding-right: $gutter
+
+.container-fixed
+    @include container($gutter-container)
+    @each $property, $value in $breakpoint
+        @media (min-device-width: $value)
+            width: $value
+.container
+    @include container($gutter)
+    width: 100%
+
+.container,
+.container-fixed,
+.row
+    @extend %clearfix
+
+@include make-grid-columns
+
+@each $property, $value in $breakpoint
+    @media all and (min-device-width: $value)
+        @for $i from 1 through $grid-columns
+            @include content($i,$property)
+
+
+// img
+//     width: auto
+//     max-width: 100%
+//     height: auto !important

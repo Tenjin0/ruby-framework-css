@@ -1,0 +1,82 @@
+$brand-primary: #26A69A !default
+$brand-success: green !default
+$brand-danger: red !default
+$font-size: 16px
+$font-size-minimized: 14px
+// $brand-warning: $deep-orange !default
+$brand-info: #9E9E9E !default
+$border-size: 1px solid
+.input-field
+    position: relative
+    margin-top: 1rem
+    margin-bottom: 0.5rem
+    display: flex
+    height: 55px
+
+.input-field>input[type="text"],
+    background-color: transparent
+    border-width: medium medium 1px
+    border-style: none none solid
+    border-color: -moz-use-text-color -moz-use-text-color #9E9E9E
+    -moz-border-top-colors: none
+    -moz-border-right-colors: none
+    -moz-border-bottom-colors: none
+    -moz-border-left-colors: none
+    border-image: none
+    border-radius: 0px
+    outline: medium none
+    // height: 2.5rem
+    width: 100%
+    font-size: $font-size
+    margin: 5px 0px 20px
+    // padding: 10px 0px 5px
+    box-shadow: none
+    // box-sizing: content-box
+    transition: all 0.3s ease 0s
+    &:focus, &.notEmpty
+        border-bottom: $border-size $brand-primary
+        box-shadow: 0px 1px 0px 0px $brand-primary
+    &.has-success,  &[required]:valid
+        border-bottom: $border-size $brand-success
+        box-shadow: 0px 1px 0px 0px $brand-success
+    &.has-error
+        border-bottom: $border-size $brand-danger
+        box-shadow: 0px 1px 0px 0px $brand-danger
+
+.input-field>input[type="text"].isEmpty + label, .input-field>input[required]:invalid + label,.input-field>input[type="text"] + label
+    // font-size: 0.8rem
+    transform: translateY(0%)
+    color: $brand-info
+    position: absolute
+    top: 0.8rem
+    left: 0rem
+    font-size: $font-size
+    cursor: text
+    transition: all 0.3s ease-out 0s
+
+//
+.input-field>input[type="text"]:focus + label,.input-field>input[type="text"].notEmpty + label,.input-field>input[type="text"].has-error + label, .input-field>input[type="text"].has-success + label, .input-field>input[required]:valid + label
+    font-size: $font-size-minimized
+    transform: translateY(-140%)
+    //     color: $brand-primary
+
+.input-field>input[type="text"].has-success + label, .input-field>input[type="text"][required]:valid + label
+    &:after
+        content: attr(data-success)
+        color: $brand-success
+        position: absolute
+        top: 50px
+        left: 0
+        transition: all 0.2s ease-out 0s
+
+.input-field>input[type="text"].has-error + label, .input-field>input[type="text"][required]:invalid + label
+    &:after
+        content: attr(data-error)
+        color: $brand-danger
+        position: absolute
+        top: 50px
+        left: 0
+        transition: all 0.2s ease-out 0s
+
+.input-field>input[type="text"]:focus + label
+    color: $brand-primary
