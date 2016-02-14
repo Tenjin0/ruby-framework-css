@@ -3,7 +3,7 @@
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   display: flex;
-  height: 55px; }
+  height: 3.4375em; }
 
 .input-field > input[type="text"] {
   background-color: transparent;
@@ -37,7 +37,7 @@
   color: #9E9E9E;
   position: absolute;
   top: 0.8rem;
-  left: 0rem;
+  left: 0;
   font-size: 16px;
   cursor: text;
   transition: all 0.3s ease-out 0s; }
@@ -50,7 +50,7 @@
   content: attr(data-success);
   color: green;
   position: absolute;
-  top: 50px;
+  top: 3.125em;
   left: 0;
   transition: all 0.2s ease-out 0s; }
 
@@ -58,7 +58,7 @@
   content: attr(data-error);
   color: red;
   position: absolute;
-  top: 50px;
+  top: 3.125em;
   left: 0;
   transition: all 0.2s ease-out 0s; }
 

@@ -12,8 +12,6 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./assets/css'));
 });
 
-
-
 //Watch task
 gulp.task('default',function() {
     gulp.watch('assets/sass/*.sass',['sass']);

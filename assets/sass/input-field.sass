@@ -6,12 +6,19 @@ $font-size-minimized: 14px
 // $brand-warning: $deep-orange !default
 $brand-info: #9E9E9E !default
 $border-size: 1px solid
+
+@function strip-unit($value)
+	@return $value / ($value * 0 + 1)
+
+@function convertPxToEm($value)
+	@return (strip-unit($value)/strip-unit($font-size)) * 1em
+
 .input-field
     position: relative
     margin-top: 1rem
     margin-bottom: 0.5rem
     display: flex
-    height: 55px
+    height: convertPxToEm(55px)
 
 .input-field>input[type="text"],
     background-color: transparent
@@ -49,7 +56,7 @@ $border-size: 1px solid
     color: $brand-info
     position: absolute
     top: 0.8rem
-    left: 0rem
+    left: 0
     font-size: $font-size
     cursor: text
     transition: all 0.3s ease-out 0s
@@ -65,7 +72,7 @@ $border-size: 1px solid
         content: attr(data-success)
         color: $brand-success
         position: absolute
-        top: 50px
+        top: convertPxToEm(50px)
         left: 0
         transition: all 0.2s ease-out 0s
 
@@ -74,7 +81,7 @@ $border-size: 1px solid
         content: attr(data-error)
         color: $brand-danger
         position: absolute
-        top: 50px
+        top: convertPxToEm(50px)
         left: 0
         transition: all 0.2s ease-out 0s
 

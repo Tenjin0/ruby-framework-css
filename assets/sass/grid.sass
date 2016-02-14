@@ -52,7 +52,7 @@ $screen-list: ".pad"
     &:after
         clear: both
 
-@mixin container($gutter: $gutter-default)
+@mixin container($gutter: $gutter-container)
     margin-right: auto
     margin-left: auto
     padding-left:  $gutter
@@ -65,12 +65,16 @@ $screen-list: ".pad"
             width: $value
 .container
     @include container($gutter)
-    width: 100%
+    width: 90%
 
 .container,
 .container-fixed,
 .row
     @extend %clearfix
+
+.row
+    padding-left: -$gutter
+    padding-right: -$gutter
 
 @include make-grid-columns
 

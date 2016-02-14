@@ -5,30 +5,26 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/grid.css" title="no title">
     <link rel="stylesheet" href="assets/css/input-field.css" title="no title">
-    <link rel="stylesheet" href="assets/css/test.css" title="no title">
 </head>
 <body>
 
 <div class="container-fixed">
     <div class="row">
-        <div class="col-offset-xs-2 col-md-2"></div>
-        <div class="col-md-2"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-2"></div>
-    </div>
-    <div class="input-field">
-        <input type="text" name="name" required>
-        <label for="name">test</label>
-    </div>
-    <div class="input-field">
-        <input type="text" pattern="." name="name">
-        <label for="name" data-error="wrong" data-success="right">test</label>
+        <div class="col-md-4">
+            <div class="input-field">
+                <input type="text" name="name" required>
+                <label for="name">test</label>
+            </div>
+        </div>
+        <div class="col-offset-xs-2 col-md-4">
+            <div class="input-field">
+                <input type="text" pattern="." name="name">
+                <label for="name" data-error="wrong" data-success="right">test</label>
+            </div>
+        </div>
     </div>
 </div>
 <script type="text/javascript" src="assets/js/float-label.js">
-
 </script>
 </body>
 </html>
