@@ -29,6 +29,9 @@ Systeme de label flottant:
     
     fonctionnalité optionnelle : On peut rajouter un message d'erreur ou de succés si le contenu de l'input correspond au regex
     défini dans l'attribut pattern.
+        note : nécessite le script javascript
+    
+    
     
     exemple :
         <div class="input-field">
