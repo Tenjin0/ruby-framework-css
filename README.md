@@ -25,15 +25,18 @@ Systeme de grille
 
 Systeme de label flottant:
 
-    Il faut un element avec une classe .input-field div qui englobe l'input suivit du label.
-
+    Il faut un element avec une classe .input-field qui englobe l'élément input suivit du label.
+    
+    fonctionnalité optionnelle : On peut rajouter un message d'erreur ou de succés si le contenu de l'input correspond au regex
+    défini dans l'attribut pattern.
+    
     exemple :
         <div class="input-field">
-            <input type="text" name="name" required>
-            <label for="name">test</label>
+            <input type="text" pattern="." name="name">
+            <label for="name" data-error="wrong" data-success="right">test</label>
         </div>
 
-    Pour un input sans attribut requires le fichier .js est requis
+    Pour un input sans attribut 'required' le fichier .js est requis
     
 Pour compiler le sass :
     - utiliser compass
