@@ -3,7 +3,7 @@ $brand-success: green !default
 $brand-danger: red !default
 $font-size: 16px
 $font-size-minimized: 14px
-// $brand-warning: $deep-orange !default
+// $brand-warning: orange !default
 $brand-info: #9E9E9E !default
 $border-size: 1px solid
 
@@ -24,21 +24,18 @@ $border-size: 1px solid
     background-color: transparent
     border-width: medium medium 1px
     border-style: none none solid
-    border-color: -moz-use-text-color -moz-use-text-color #9E9E9E
-    -moz-border-top-colors: none
-    -moz-border-right-colors: none
-    -moz-border-bottom-colors: none
-    -moz-border-left-colors: none
+    border-color: -moz-use-text-color $brand-info
+	    -moz-border-top-colors: none
+	    -moz-border-right-colors: none
+	    -moz-border-bottom-colors: none
+	    -moz-border-left-colors: none
     border-image: none
     border-radius: 0px
     outline: medium none
-    // height: 2.5rem
     width: 100%
     font-size: $font-size
     margin: 5px 0px 20px
-    // padding: 10px 0px 5px
     box-shadow: none
-    // box-sizing: content-box
     transition: all 0.3s ease 0s
     &:focus, &.notEmpty
         border-bottom: $border-size $brand-primary
@@ -51,7 +48,6 @@ $border-size: 1px solid
         box-shadow: 0px 1px 0px 0px $brand-danger
 
 .input-field>input[type="text"].isEmpty + label, .input-field>input[required]:invalid + label,.input-field>input[type="text"] + label
-    // font-size: 0.8rem
     transform: translateY(0%)
     color: $brand-info
     position: absolute
@@ -61,11 +57,10 @@ $border-size: 1px solid
     cursor: text
     transition: all 0.3s ease-out 0s
 
-//
+
 .input-field>input[type="text"]:focus + label,.input-field>input[type="text"].notEmpty + label,.input-field>input[type="text"].has-error + label, .input-field>input[type="text"].has-success + label, .input-field>input[required]:valid + label
     font-size: $font-size-minimized
     transform: translateY(-140%)
-    //     color: $brand-primary
 
 .input-field>input[type="text"].has-success + label, .input-field>input[type="text"][required]:valid + label
     &:after
